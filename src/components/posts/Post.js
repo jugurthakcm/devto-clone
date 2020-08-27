@@ -6,17 +6,19 @@ import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 
 const Post = () => {
   return (
-    <div class='card post pl-3'>
+    <div className='card post pl-3'>
       <div className='post__info d-flex mt-3'>
         <Avatar>H</Avatar>
         <div className='d-flex flex-column ml-2'>
-          <span class='post__author'>Kacimi Jugurtha</span>
-          <span class='post__date text-muted'>Aug 27</span>
+          <span className='post__author'>Kacimi Jugurtha</span>
+          <span className='post__date text-muted'>Aug 27</span>
         </div>
       </div>
 
-      <div class='post__body ml-5 pt-1 pr-3 '>
-        <h3 class='card-title post__title my-2'>How to code in Javascript ?</h3>
+      <div className='post__body ml-5 pt-1 pr-3 '>
+        <h3 className='card-title post__title my-2'>
+          How to code in Javascript ?
+        </h3>
 
         <ul className='post__tags d-flex'>
           <li className='post__tag mr-3'>#javascript</li>
