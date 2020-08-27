@@ -1,8 +1,7 @@
-.menu__link {
+.home__filter li {
   cursor: pointer;
 }
-
-.menu__link:hover {
+.home__filter li:hover {
+  color: blue;
   background-color: var(--gray-hover);
-  color: #0d6efd;
 }

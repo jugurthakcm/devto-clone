@@ -10,7 +10,7 @@
 }
 
 .tags__link:hover {
-  background-color: rgb(235, 235, 235);
+  background-color: var(--gray-hover);
   color: #0d6efd;
 }
 
