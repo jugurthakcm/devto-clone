@@ -1,0 +1,8 @@
+.menu__link {
+  cursor: pointer;
+}
+
+.menu__link:hover {
+  background-color: rgb(235, 235, 235);
+  color: #0d6efd;
+}

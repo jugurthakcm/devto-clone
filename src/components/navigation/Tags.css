@@ -1,0 +1,23 @@
+.tags__title {
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  color: rgb(150, 150, 150);
+}
+
+.tags__link {
+  cursor: pointer;
+}
+
+.tags__link:hover {
+  background-color: rgb(235, 235, 235);
+  color: #0d6efd;
+}
+
+.tags__btn {
+  opacity: 0;
+}
+
+.tags__link:hover .tags__btn {
+  opacity: 1;
+}
