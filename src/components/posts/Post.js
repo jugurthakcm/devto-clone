@@ -7,7 +7,6 @@ import GetArticles from '../../data/getArticles';
 
 const Post = () => {
   const { data } = GetArticles();
-  console.log(data);
   const posts = data
     ? data.map((post) => {
         return (

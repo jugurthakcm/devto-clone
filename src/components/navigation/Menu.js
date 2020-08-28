@@ -7,7 +7,7 @@ const Tags = () => {
       <li className='nav-link menu__link rounded'>
         <strong>Sign In/Up</strong>
       </li>
-      <li className='nav-link menu__link rounded'>Listenings</li>
+      <li className='nav-link menu__link rounded'>Listings</li>
       <li className='nav-link menu__link rounded'>Podcasts</li>
       <li className='nav-link menu__link rounded'>Videos</li>
       <li className='nav-link menu__link rounded'>Tags</li>

@@ -5,7 +5,7 @@ const GetArticles = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
-      await Axios.get('https://dev.to/api/articles?per_page=10').then((res) =>
+      await Axios.get('https://dev.to/api/articles').then((res) =>
         setData(res.data)
       );
     };
