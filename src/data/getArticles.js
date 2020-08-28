@@ -1,0 +1,17 @@
+import { useState, useEffect } from 'react';
+import Axios from 'axios';
+
+const GetArticles = () => {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      await Axios.get('https://dev.to/api/articles?per_page=10').then((res) =>
+        setData(res.data)
+      );
+    };
+    fetchData();
+  }, []);
+  return { data };
+};
+
+export default GetArticles;
