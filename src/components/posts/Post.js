@@ -29,10 +29,12 @@ const Post = () => {
         <ul className='post__options d-flex justify-content-between align-items-center'>
           <div className='post__optionsReactions'>
             <span className='rounded p-1'>
-              <FavoriteBorderIcon /> 17 reactions
+              <FavoriteBorderIcon /> 17{' '}
+              <span className='d-none d-sm-inline'>reactions</span>
             </span>
             <span className='rounded ml-3 p-1'>
-              <ChatBubbleOutlineIcon /> 20 comments
+              <ChatBubbleOutlineIcon /> 20{' '}
+              <span className='d-none d-sm-inline'>comments</span>
             </span>
           </div>
 

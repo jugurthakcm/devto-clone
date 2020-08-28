@@ -1,0 +1,11 @@
+.home__postFilter li {
+  cursor: pointer;
+}
+.home__postFilter li:hover {
+  color: blue;
+  background-color: var(--gray-hover);
+}
+
+.home__postFilterSelect {
+  width: 100px;
+}

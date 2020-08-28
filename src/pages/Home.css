@@ -1,7 +1,0 @@
-.home__filter li {
-  cursor: pointer;
-}
-.home__filter li:hover {
-  color: blue;
-  background-color: var(--gray-hover);
-}
