@@ -4,8 +4,9 @@ import Avatar from '@material-ui/core/Avatar';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import GetArticles from '../../data/getArticles';
+import { Link } from 'react-router-dom';
 
-const PostSummary = () => {
+const PostSummary = (props) => {
   const { data } = GetArticles();
   const posts = data
     ? data.map((post) => {
@@ -24,7 +25,7 @@ const PostSummary = () => {
             </div>
             <div className='postSummary__body ml-5 pt-1 pr-3 '>
               <h3 className='card-title postSummary__title my-2'>
-                {post.title}
+                <Link to={`/post/${post.id}`}>{post.title}</Link>
               </h3>
 
               <ul className='postSummary__tags d-flex'>

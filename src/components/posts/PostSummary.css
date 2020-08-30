@@ -12,6 +12,11 @@
   cursor: pointer;
 }
 
+.postSummary__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .postSummary__title:hover {
   color: blue;
 }
