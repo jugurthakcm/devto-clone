@@ -11,32 +11,34 @@ const PostSummary = () => {
     ? data.map((post) => {
         return (
           <div className='card post pl-3 mb-2' key={post.id}>
-            <div className='post__info d-flex mt-3'>
+            <div className='postSummary__info d-flex mt-3'>
               <Avatar>
                 <img src={post.user.profile_image_90} alt='user' />
               </Avatar>
               <div className='d-flex flex-column ml-2'>
-                <span className='post__author'>{post.user.name}</span>
-                <span className='post__date text-muted'>
+                <span className='postSummary__author'>{post.user.name}</span>
+                <span className='postSummary__date text-muted'>
                   {post.readable_publish_date}
                 </span>
               </div>
             </div>
-            <div className='post__body ml-5 pt-1 pr-3 '>
-              <h3 className='card-title post__title my-2'>{post.title}</h3>
+            <div className='postSummary__body ml-5 pt-1 pr-3 '>
+              <h3 className='card-title postSummary__title my-2'>
+                {post.title}
+              </h3>
 
-              <ul className='post__tags d-flex'>
+              <ul className='postSummary__tags d-flex'>
                 {post.tag_list.map((tag) => {
                   return (
-                    <li className='post__tag mr-3' key={tag}>
+                    <li className='postSummary__tag mr-3' key={tag}>
                       #{tag}
                     </li>
                   );
                 })}
               </ul>
 
-              <ul className='post__options d-flex justify-content-between align-items-center'>
-                <div className='post__optionsReactions'>
+              <ul className='postSummary__options d-flex justify-content-between align-items-center'>
+                <div className='postSummary__optionsReactions'>
                   <span className='rounded p-1'>
                     <FavoriteBorderIcon /> {post.public_reactions_count}{' '}
                     <span className='d-none d-sm-inline'>reactions</span>
@@ -47,11 +49,11 @@ const PostSummary = () => {
                   </span>
                 </div>
 
-                <div className='post__optionsDetails'>
-                  <span className='post__timeRead text-muted mr-2'>
+                <div className='postSummary__optionsDetails'>
+                  <span className='postSummary__timeRead text-muted mr-2'>
                     2 min read
                   </span>
-                  <button className='btn btn-secondary post__optionsSave py-1 px-2'>
+                  <button className='btn btn-secondary postSummary__optionsSave py-1 px-2'>
                     Save
                   </button>
                 </div>

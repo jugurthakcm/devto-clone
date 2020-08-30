@@ -1,57 +1,57 @@
-.post__author {
+.postSummary__author {
   font-size: 0.9rem;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.7);
 }
 
-.post__date {
+.postSummary__date {
   font-size: 0.8rem;
 }
 
-.post__title {
+.postSummary__title {
   cursor: pointer;
 }
 
-.post__title:hover {
+.postSummary__title:hover {
   color: blue;
 }
 
-.post__tags {
+.postSummary__tags {
   padding: 0 !important;
 }
 
-.post__tag {
+.postSummary__tag {
   color: rgb(170, 170, 170);
   font-size: 0.9rem;
   cursor: pointer;
 }
-.post__tag:hover {
+.postSummary__tag:hover {
   color: black;
 }
 
-.post__options {
+.postSummary__options {
   padding: 0 !important;
 }
 
-.post__optionsReactions span {
+.postSummary__optionsReactions span {
   font-size: 0.9rem;
   cursor: pointer;
 }
-.post__optionsReactions span:hover {
+.postSummary__optionsReactions span:hover {
   background-color: rgb(245, 245, 245);
 }
 
-.post__timeRead {
+.postSummary__timeRead {
   font-size: 0.8rem;
 }
 
-.post__optionsSave {
+.postSummary__optionsSave {
   background-color: var(--gray) !important;
   border: none;
   font-size: 0.95rem;
   color: black;
 }
-.post__optionsSave:hover {
+.postSummary__optionsSave:hover {
   background-color: var(--gray-hover) !important;
   border: none;
   color: black;
