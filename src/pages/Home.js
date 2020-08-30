@@ -1,11 +1,12 @@
 import React from 'react';
 import './Home.css';
-import Navbar from '../components/Navbar';
-import Menu from '../components/navigation/Menu';
-import Tags from '../components/navigation/Tags';
+import Navbar from '../components/navbar/Navbar';
+import Menu from '../components/aside/Menu';
+import Tags from '../components/aside/Tags';
 import Post from '../components/posts/Post';
 import Auth from '../components/auth/Auth';
 import PostFilter from '../components/posts/PostFilter';
+import Pagination from '../components/pagination/Pagination';
 
 const Home = () => {
   return (
@@ -27,6 +28,7 @@ const Home = () => {
           <Auth />
         </div>
       </div>
+      <Pagination />
     </div>
   );
 };
