@@ -11,7 +11,15 @@ const PostContent = ({ post }) => {
       <img src={post.cover_image} className='card-img-top' alt='cover' />
       <div className='card-body'>
         <h1 className='card-title'>{post.title}</h1>
-        <p className='card-text postContent__tags text-muted'>#react</p>
+        <ul className='postSummary__tags d-flex'>
+          {post.tags.map((tag) => {
+            return (
+              <li className='postSummary__tag mr-3 text-muted' key={tag}>
+                #{tag}
+              </li>
+            );
+          })}
+        </ul>
         <div className='postContent__Info d-flex align-items-center'>
           <div className='postContent__InfoUser d-flex align-items-center'>
             <Avatar>
