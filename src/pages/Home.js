@@ -3,7 +3,7 @@ import './Home.css';
 import Navbar from '../components/navbar/Navbar';
 import Menu from '../components/aside/Menu';
 import Tags from '../components/aside/Tags';
-import Post from '../components/posts/Post';
+import PostSummary from '../components/posts/PostSummary';
 import Auth from '../components/auth/Auth';
 import PostFilter from '../components/posts/PostFilter';
 import Pagination from '../components/pagination/Pagination';
@@ -22,7 +22,7 @@ const Home = () => {
             <h5 className='mb-3'>Posts</h5>
             <PostFilter />
           </div>
-          <Post />
+          <PostSummary />
         </div>
         <div className='home__bodyRight col-3 d-lg-block d-none'>
           <Auth />

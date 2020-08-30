@@ -1,11 +1,11 @@
 import React from 'react';
-import './Post.css';
+import './PostSummary.css';
 import Avatar from '@material-ui/core/Avatar';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import GetArticles from '../../data/getArticles';
 
-const Post = () => {
+const PostSummary = () => {
   const { data } = GetArticles();
   const posts = data
     ? data.map((post) => {
@@ -64,4 +64,4 @@ const Post = () => {
   return <>{posts}</>;
 };
 
-export default Post;
+export default PostSummary;
