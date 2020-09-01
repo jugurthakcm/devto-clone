@@ -4,8 +4,10 @@ import './Navbar.css';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import NotificationsNoneRoundedIcon from '@material-ui/icons/NotificationsNoneRounded';
 import ChatBubbleOutlineRoundedIcon from '@material-ui/icons/ChatBubbleOutlineRounded';
+import Avatar from '@material-ui/core/Avatar';
 
 const Navbar = () => {
+  const isLogged = true;
   const [search, setSearch] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,7 +40,7 @@ const Navbar = () => {
         </button>
         <ChatBubbleOutlineRoundedIcon />
         <NotificationsNoneRoundedIcon className='mx-3' />
-        <MenuRoundedIcon />
+        {isLogged ? <Avatar>J</Avatar> : <MenuRoundedIcon />}
       </div>
     </nav>
   );

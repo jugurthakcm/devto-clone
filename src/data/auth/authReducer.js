@@ -10,8 +10,7 @@ export const actionAuthTypes = {
 export const authReducer = (state, action) => {
   switch (action.type) {
     case actionAuthTypes.GITHUB:
-      console.log(action.user);
-      return state;
+      return { ...state, user: action.user };
     default:
       return state;
   }
