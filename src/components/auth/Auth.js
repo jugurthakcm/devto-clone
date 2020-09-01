@@ -2,8 +2,8 @@ import React from 'react';
 import './Auth.css';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import { useAuth } from '../../data/AuthProvider';
-import { actionAuthTypes } from '../../data/authReducer';
+import { useAuth } from '../../data/auth/AuthProvider';
+import { actionAuthTypes } from '../../data/auth/authReducer';
 import firebase from '../../config/firebaseConfig';
 
 const Auth = () => {

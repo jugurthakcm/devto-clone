@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home';
-import { PageProvider } from './data/PageProvider';
-import { pageReducer, initialPage } from './data/pageReducer';
+import { PageProvider } from './data/api/PageProvider';
+import { pageReducer, initialPage } from './data/api/pageReducer';
 import Post from './pages/Post';
-import { AuthProvider } from './data/AuthProvider';
-import { authReducer, initialState } from './data/authReducer';
+import { AuthProvider } from './data/auth/AuthProvider';
+import { authReducer, initialState } from './data/auth/authReducer';
 
 function App() {
   return (

@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
 import './Pagination.css';
-import { totalOfArticles, articlesPerPage } from '../../data/getArticles';
-import { usePage } from '../../data/PageProvider';
-import { actionTypes } from '../../data/pageReducer';
+import { totalOfArticles, articlesPerPage } from '../../data/api/getArticles';
+import { usePage } from '../../data/api/PageProvider';
+import { actionTypes } from '../../data/api/pageReducer';
 
 const Pagination = () => {
   const [state, dispatch] = usePage(); // eslint-disable-line
