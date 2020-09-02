@@ -4,18 +4,23 @@ import Avatar from '@material-ui/core/Avatar';
 import firebase from '../../config/firebaseConfig';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
-const Tags = () => {
+const Menu = () => {
   const [user, loading, error] = useAuthState(firebase.auth()); //eslint-disable-line
+
   return (
     <ul className='nav menu flex-column'>
       <li className='nav-link menu__link rounded'>
         {!loading ? (
           user ? (
             <div className='d-flex align-items-center'>
-              <Avatar>J</Avatar>
+              <Avatar>
+                {user ? (
+                  <img src={user.photoURL} alt='avatar' width='40px' />
+                ) : null}
+              </Avatar>
               <div className='d-flex flex-column ml-2'>
-                <strong>KACIMI Jugurtha</strong>
-                <small className='text-muted'>@jugurthakcm</small>
+                <strong>{user.displayName}</strong>
+                <small className='text-muted'>{user.email}</small>
               </div>
             </div>
           ) : (
@@ -32,4 +37,4 @@ const Tags = () => {
   );
 };
 
-export default Tags;
+export default Menu;

@@ -43,7 +43,15 @@ const Navbar = () => {
         </button>
         <ChatBubbleOutlineRoundedIcon />
         <NotificationsNoneRoundedIcon className='mx-3' />
-        {!loading ? user ? <Avatar>J</Avatar> : <MenuRoundedIcon /> : null}
+        {!loading ? (
+          user ? (
+            <Avatar>
+              <img src={user.photoURL} alt='avatar' width='40px' />
+            </Avatar>
+          ) : (
+            <MenuRoundedIcon />
+          )
+        ) : null}
       </div>
     </nav>
   );

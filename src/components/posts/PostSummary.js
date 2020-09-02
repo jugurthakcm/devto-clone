@@ -14,7 +14,7 @@ const PostSummary = (props) => {
           <div className='card post pl-3 mb-2' key={post.id}>
             <div className='postSummary__info d-flex mt-3'>
               <Avatar>
-                <img src={post.user.profile_image_90} alt='user' />
+                <img src={post.user.profile_image_90} alt='user' width='40px' />
               </Avatar>
               <div className='d-flex flex-column ml-2'>
                 <span className='postSummary__author'>{post.user.name}</span>

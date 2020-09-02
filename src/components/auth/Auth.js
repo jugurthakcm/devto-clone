@@ -1,6 +1,5 @@
 import React from 'react';
 import './Auth.css';
-import TwitterIcon from '@material-ui/icons/Twitter';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { useAuth } from '../../data/auth/AuthProvider';
 import { actionAuthTypes } from '../../data/auth/authReducer';
@@ -11,8 +10,24 @@ const Auth = () => {
   const [state, dispatch] = useAuth(); //eslint-disable-line
   const [user, loading, error] = useAuthState(firebase.auth()); //eslint-disable-line
 
+  console.log(user);
+
   const handleGithubAuth = () => {
     const provider = new firebase.auth.GithubAuthProvider();
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then(function (result) {
+        var user = result.user;
+        dispatch({ type: actionAuthTypes.GITHUB, user });
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  };
+
+  const handleGoogleAuth = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
     firebase
       .auth()
       .signInWithPopup(provider)
@@ -70,9 +85,15 @@ const Auth = () => {
               </button>
               <button
                 type='button'
-                className='btn btn-primary btn-lg btn-block auth__button'
+                className='btn btn-primary bg-white text-dark btn-lg btn-block auth__button'
+                onClick={handleGoogleAuth}
               >
-                <TwitterIcon /> Sign In with Twitter
+                <img
+                  src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg'
+                  alt='google'
+                  width='20px'
+                />{' '}
+                Sign In with Google
               </button>
               <button
                 type='button'

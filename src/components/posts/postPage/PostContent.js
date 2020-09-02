@@ -23,7 +23,7 @@ const PostContent = ({ post }) => {
         <div className='postContent__Info d-flex align-items-center'>
           <div className='postContent__InfoUser d-flex align-items-center'>
             <Avatar>
-              <img src={post.user.profile_image_90} alt='user' />
+              <img src={post.user.profile_image_90} alt='user' width='40px' />
             </Avatar>
             <strong className='ml-2'>{post.user.name}</strong>
           </div>

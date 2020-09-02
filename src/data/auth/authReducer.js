@@ -4,12 +4,14 @@ export const initialState = {
 
 export const actionAuthTypes = {
   GITHUB: 'GITHUB',
-  TWITTER: 'TWITTER',
+  GOOGLE: 'GOOGLE',
 };
 
 export const authReducer = (state, action) => {
   switch (action.type) {
     case actionAuthTypes.GITHUB:
+      return { ...state, user: action.user };
+    case actionAuthTypes.GOOGLE:
       return { ...state, user: action.user };
     default:
       return state;
