@@ -8,6 +8,7 @@ import Post from './pages/Post';
 import { AuthProvider } from './data/auth/AuthProvider';
 import { authReducer, initialState } from './data/auth/authReducer';
 
+
 function App() {
   return (
     <div className='App'>
