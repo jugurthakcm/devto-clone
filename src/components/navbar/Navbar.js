@@ -5,9 +5,12 @@ import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import NotificationsNoneRoundedIcon from '@material-ui/icons/NotificationsNoneRounded';
 import ChatBubbleOutlineRoundedIcon from '@material-ui/icons/ChatBubbleOutlineRounded';
 import Avatar from '@material-ui/core/Avatar';
+import firebase from '../../config/firebaseConfig';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Navbar = () => {
-  const isLogged = true;
+  const [user, loading, error] = useAuthState(firebase.auth()); //eslint-disable-line
+
   const [search, setSearch] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,7 +43,7 @@ const Navbar = () => {
         </button>
         <ChatBubbleOutlineRoundedIcon />
         <NotificationsNoneRoundedIcon className='mx-3' />
-        {isLogged ? <Avatar>J</Avatar> : <MenuRoundedIcon />}
+        {!loading ? user ? <Avatar>J</Avatar> : <MenuRoundedIcon /> : null}
       </div>
     </nav>
   );
