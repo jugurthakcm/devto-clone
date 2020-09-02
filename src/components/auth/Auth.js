@@ -10,8 +10,6 @@ const Auth = () => {
   const [state, dispatch] = useAuth(); //eslint-disable-line
   const [user, loading, error] = useAuthState(firebase.auth()); //eslint-disable-line
 
-  console.log(user);
-
   const handleGithubAuth = () => {
     const provider = new firebase.auth.GithubAuthProvider();
     firebase

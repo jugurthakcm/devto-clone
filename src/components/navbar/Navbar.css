@@ -16,3 +16,12 @@ nav {
 .MuiSvgIcon-root {
   cursor: pointer;
 }
+
+.navbarRight__dropdown {
+  right: 0;
+  left: unset;
+  display: unset;
+  margin-top: 0.5em;
+  width: 250px;
+  padding: 0.5em;
+}
