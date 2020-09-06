@@ -23,6 +23,7 @@ function App() {
         </PageProvider>
       </Router>
     </div>
+
   );
 }
 

@@ -4,14 +4,15 @@ import './Navbar.css';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import NotificationsNoneRoundedIcon from '@material-ui/icons/NotificationsNoneRounded';
 import ChatBubbleOutlineRoundedIcon from '@material-ui/icons/ChatBubbleOutlineRounded';
-import GitHubIcon from '@material-ui/icons/GitHub';
 import Avatar from '@material-ui/core/Avatar';
 import firebase from '../../config/firebaseConfig';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import AuthNav from './AuthNav';
+import SignOutNav from './SignOutNav';
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(firebase.auth()); //eslint-disable-line
-  const dropdown = useRef();
+  const authNavRef = useRef();
   const [search, setSearch] = useState('');
 
   const handleSubmit = (e) => {
@@ -19,7 +20,7 @@ const Navbar = () => {
   };
 
   const handleRef = () => {
-    dropdown.current.classList.toggle('d-none');
+    authNavRef.current.classList.toggle('d-none');
   };
 
   return (
@@ -51,50 +52,22 @@ const Navbar = () => {
         <NotificationsNoneRoundedIcon className='mx-3' />
         {!loading ? (
           user ? (
-            <Avatar>
-              <img src={user.photoURL} alt='avatar' width='40px' />
-            </Avatar>
-          ) : (
             <>
-              <div className='dropdown'>
-                <MenuRoundedIcon onClick={handleRef} />
-                <ul
-                  className='navbarRight__dropdown dropdown-menu d-none'
-                  aria-labelledby='dropdownMenuButton'
-                  ref={dropdown}
-                >
-                  <li>
-                    <button
-                      type='button'
-                      className='btn btn-dark btn-lg btn-block auth__button mb-2'
-                    >
-                      <GitHubIcon /> Sign In with Github
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      type='button'
-                      className='btn btn-primary bg-white text-dark btn-lg btn-block auth__button mb-2'
-                    >
-                      <img
-                        src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg'
-                        alt='google'
-                        width='20px'
-                      />{' '}
-                      Sign In with Google
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      type='button'
-                      className='btn btn-light btn-lg btn-block auth__button'
-                    >
-                      More Sign In Options
-                    </button>
-                  </li>
-                </ul>
-              </div>
+              <Avatar>
+                <img
+                  src={user.photoURL}
+                  alt='avatar'
+                  width='40px'
+                  onClick={handleRef}
+                />
+              </Avatar>
+              <SignOutNav ref={authNavRef} />
             </>
+          ) : (
+            <div className='dropdown'>
+              <MenuRoundedIcon onClick={handleRef} />
+              <AuthNav ref={authNavRef} />
+            </div>
           )
         ) : null}
       </div>
