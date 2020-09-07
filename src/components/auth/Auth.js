@@ -31,7 +31,7 @@ const Auth = () => {
       .signInWithPopup(provider)
       .then(function (result) {
         var user = result.user;
-        dispatch({ type: actionAuthTypes.GITHUB, user });
+        dispatch({ type: actionAuthTypes.GOOGLE, user });
       })
       .catch(function (error) {
         console.log(error.message);

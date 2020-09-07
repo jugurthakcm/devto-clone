@@ -1,7 +1,7 @@
 import React from 'react';
 import firebase from '../../config/firebaseConfig';
 
-const SignOutNav = React.forwardRef((props, ref) => {
+const SignOutNav = () => {
   const handleSignOut = () => {
     firebase
       .auth()
@@ -27,6 +27,6 @@ const SignOutNav = React.forwardRef((props, ref) => {
       </li>
     </>
   );
-});
+};
 
 export default SignOutNav;

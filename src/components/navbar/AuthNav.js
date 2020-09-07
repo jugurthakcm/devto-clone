@@ -5,7 +5,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import { useAuth } from '../../data/auth/AuthProvider';
 import { actionAuthTypes } from '../../data/auth/authReducer';
 
-const AuthNav = React.forwardRef((props, ref) => {
+const AuthNav = () => {
   const [state, dispatch] = useAuth(); //eslint-disable-line
   const [user, loading, error] = useAuthState(firebase.auth()); //eslint-disable-line
 
@@ -30,7 +30,7 @@ const AuthNav = React.forwardRef((props, ref) => {
       .signInWithPopup(provider)
       .then(function (result) {
         var user = result.user;
-        dispatch({ type: actionAuthTypes.GITHUB, user });
+        dispatch({ type: actionAuthTypes.GOOGLE, user });
       })
       .catch(function (error) {
         console.log(error.message);
@@ -72,6 +72,6 @@ const AuthNav = React.forwardRef((props, ref) => {
       </li>
     </>
   );
-});
+};
 
 export default AuthNav;
