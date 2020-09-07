@@ -12,15 +12,10 @@ import SignOutNav from './SignOutNav';
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(firebase.auth()); //eslint-disable-line
-  const authNavRef = useRef();
   const [search, setSearch] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  };
-
-  const handleRef = () => {
-    authNavRef.current.classList.toggle('d-none');
   };
 
   return (
@@ -52,17 +47,22 @@ const Navbar = () => {
         <NotificationsNoneRoundedIcon className='mx-3' />
         {!loading ? (
           user ? (
-            <>
-              <Avatar>
-                <img
-                  src={user.photoURL}
-                  alt='avatar'
-                  width='40px'
-                  onClick={handleRef}
-                />
+            <div className='dropdown'>
+              <Avatar
+                style={{ cursor: 'pointer' }}
+                id='dropdownMenuButton'
+                data-toggle='dropdown'
+                aria-expanded='false'
+              >
+                <img src={user.photoURL} alt='avatar' width='40px' />
               </Avatar>
-              <SignOutNav ref={authNavRef} />
-            </>
+              <ul
+                className='navbarRight__dropdown dropdown-menu p-2'
+                aria-labelledby='dropdownMenuButton'
+              >
+                <SignOutNav />
+              </ul>
+            </div>
           ) : (
             <div className='dropdown'>
               <MenuRoundedIcon

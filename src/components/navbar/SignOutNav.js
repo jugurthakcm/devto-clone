@@ -15,11 +15,7 @@ const SignOutNav = React.forwardRef((props, ref) => {
   };
 
   return (
-    <ul
-      className='navbarRight__dropdown dropdown-menu d-none'
-      aria-labelledby='dropdownMenuButton'
-      ref={ref}
-    >
+    <>
       <li>
         <button
           type='button'
@@ -29,7 +25,7 @@ const SignOutNav = React.forwardRef((props, ref) => {
           Sign Out
         </button>
       </li>
-    </ul>
+    </>
   );
 });
 
