@@ -83,7 +83,7 @@ const Auth = () => {
               </button>
               <button
                 type='button'
-                className='btn btn-primary bg-white text-dark btn-lg btn-block auth__button'
+                className='btn btn-primary bg-white text-dark btn-lg btn-block auth__button auth__buttonGoogle'
                 onClick={handleGoogleAuth}
               >
                 <img

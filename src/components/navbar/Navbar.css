@@ -20,8 +20,12 @@ nav {
 .navbarRight__dropdown {
   right: 0;
   left: unset;
-  display: unset;
   margin-top: 0.5em;
   width: 250px;
-  padding: 0.5em;
+}
+
+.auth__buttonGoogle:hover,
+.auth__buttonGoogle:active {
+  background-color: var(--bs-blue) !important;
+  color: white !important;
 }

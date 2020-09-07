@@ -65,8 +65,18 @@ const Navbar = () => {
             </>
           ) : (
             <div className='dropdown'>
-              <MenuRoundedIcon onClick={handleRef} />
-              <AuthNav ref={authNavRef} />
+              <MenuRoundedIcon
+                className='dropdown-toggle'
+                id='dropdownMenuButton'
+                data-toggle='dropdown'
+                aria-expanded='false'
+              />
+              <ul
+                className='dropdown-menu navbarRight__dropdown p-2'
+                aria-labelledby='dropdownMenuButton'
+              >
+                <AuthNav />
+              </ul>
             </div>
           )
         ) : null}

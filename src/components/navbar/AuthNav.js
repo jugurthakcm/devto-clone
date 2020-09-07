@@ -38,15 +38,11 @@ const AuthNav = React.forwardRef((props, ref) => {
   };
 
   return (
-    <ul
-      className='navbarRight__dropdown dropdown-menu d-none'
-      aria-labelledby='dropdownMenuButton'
-      ref={ref}
-    >
+    <>
       <li>
         <button
           type='button'
-          className='btn btn-dark btn-lg btn-block auth__button mb-2'
+          className='btn btn-dark btn-lg btn-block auth__button mb-2 '
           onClick={handleGithubAuth}
         >
           <GitHubIcon /> Sign In with Github
@@ -55,7 +51,7 @@ const AuthNav = React.forwardRef((props, ref) => {
       <li>
         <button
           type='button'
-          className='btn btn-primary bg-white text-dark btn-lg btn-block auth__button mb-2'
+          className='btn btn-primary bg-white text-dark btn-lg btn-block auth__button auth__buttonGoogle mb-2'
           onClick={handleGoogleAuth}
         >
           <img
@@ -69,12 +65,12 @@ const AuthNav = React.forwardRef((props, ref) => {
       <li>
         <button
           type='button'
-          className='btn btn-light btn-lg btn-block auth__button'
+          className='btn btn-light btn-lg btn-block auth__button '
         >
           More Sign In Options
         </button>
       </li>
-    </ul>
+    </>
   );
 });
 

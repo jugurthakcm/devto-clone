@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle';
 import Home from './pages/Home';
 import { PageProvider } from './data/api/PageProvider';
 import { pageReducer, initialPage } from './data/api/pageReducer';
 import Post from './pages/Post';
 import { AuthProvider } from './data/auth/AuthProvider';
 import { authReducer, initialState } from './data/auth/authReducer';
-
 
 function App() {
   return (
@@ -23,7 +24,6 @@ function App() {
         </PageProvider>
       </Router>
     </div>
-
   );
 }
 
