@@ -7,8 +7,11 @@ import PostSummary from '../components/posts/PostSummary';
 import Auth from '../components/auth/Auth';
 import PostFilter from '../components/posts/PostFilter';
 import Pagination from '../components/pagination/Pagination';
+import GetArticles from '../data/api/getArticles';
 
 const Home = () => {
+  const { data } = GetArticles();
+  console.log(data);
   return (
     <div>
       <Navbar />
@@ -22,13 +25,17 @@ const Home = () => {
             <h5 className='mb-3'>Posts</h5>
             <PostFilter />
           </div>
-          <PostSummary />
+          {data && data.length ? (
+            <PostSummary data={data} />
+          ) : (
+            <p className='text-center font-weight-bold mt-3'>No posts ...</p>
+          )}
         </div>
         <div className='home__bodyRight col-3 d-lg-block d-none'>
           <Auth />
         </div>
       </div>
-      <Pagination />
+      {data && data.length ? <Pagination /> : null}
     </div>
   );
 };

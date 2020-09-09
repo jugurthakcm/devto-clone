@@ -3,11 +3,11 @@ import './PostSummary.css';
 import Avatar from '@material-ui/core/Avatar';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
-import GetArticles from '../../data/api/getArticles';
+
 import { Link } from 'react-router-dom';
 
 const PostSummary = (props) => {
-  const { data } = GetArticles();
+  const { data } = props;
   const posts = data
     ? data.map((post) => {
         return (
