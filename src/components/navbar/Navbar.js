@@ -9,13 +9,17 @@ import firebase from '../../config/firebaseConfig';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import AuthNav from './AuthNav';
 import SignOutNav from './SignOutNav';
+import { useSearch } from '../../data/search/SearchProvider';
+import { actionTypesSearch } from '../../data/search/SearchReducer';
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(firebase.auth()); //eslint-disable-line
   const [search, setSearch] = useState('');
+  const [state, dispatch] = useSearch('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch({ type: actionTypesSearch.SEARCH, search });
   };
 
   return (
@@ -33,7 +37,7 @@ const Navbar = () => {
           <input
             type='text'
             className='navbarLeft__input form-control ml-2'
-            placeholder='Search...'
+            placeholder='Search tag...'
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
