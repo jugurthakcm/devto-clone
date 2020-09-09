@@ -15,7 +15,7 @@ import { actionTypesSearch } from '../../data/search/SearchReducer';
 const Navbar = () => {
   const [user, loading, error] = useAuthState(firebase.auth()); //eslint-disable-line
   const [search, setSearch] = useState('');
-  const [state, dispatch] = useSearch('');
+  const [state, dispatch] = useSearch(''); //eslint-disable-line
 
   const handleSubmit = (e) => {
     e.preventDefault();
